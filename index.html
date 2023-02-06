@@ -31,7 +31,7 @@
     <hr>
     <h3>Best countries to visit</h3>
     <p>If you are thinking of coutries to visit,below is the list of countries that are good to visit for vacation.The countries are listed as per the popularity and are quite affordable to travel.</p>
-    <table>
+    <table border="1px">
         <tr>
             <th>Countries</th><th>Reason</th><th>Number of days to spend</th>
         </tr>
@@ -49,6 +49,55 @@
         </tr>
         
     </table>
+    <hr>
+    <h>Code Snippet Exmaple of SASS</h>
+    <blockquote>How can I position several <img> elements into a circle around another and have those elements all be clickable links as well? I want it to look like the picture below, but I have no idea how to achieve that effect.
+    </blockquote>
+    <a href="https://stackoverflow.com/questions/12813573/position-icons-into-circle">Stack Over Flow Link</a>
+    <pre>
+        /// Mixin to place items on a circle
+        /// @author Kitty Giraudel
+        /// @author Ana Tudor
+        /// @param {Integer} $item-count - Number of items on the circle
+        /// @param {Length} $circle-size - Large circle size
+        /// @param {Length} $item-size - Single item size
+        @mixin on-circle($item-count, $circle-size, $item-size) {
+          position: relative;
+          width:  $circle-size;
+          height: $circle-size;
+          padding: 0;
+          border-radius: 50%; 
+          list-style: none;       
+          
+          > * {
+            display: block;
+            position: absolute;
+            top:  50%; 
+            left: 50%;
+            width:  $item-size;
+            height: $item-size;
+            margin: -($item-size / 2);
+          
+            $angle: (360 / $item-count);
+            $rot: 0;
+        
+            @for $i from 1 through $item-count {
+              &:nth-of-type(#{$i}) {
+                transform: 
+                  rotate($rot * 1deg) 
+                  translate($circle-size / 2) 
+                  rotate($rot * -1deg);
+              }
+        
+              $rot: $rot + $angle;
+            }
+          }
+        }
+        
+
+    </pre>
+    <a href="https://css-tricks.com/snippets/sass/placing-items-circle/"> CSS Tricks Link</a><br>
 </body>
 <a href="aboutme.html">Click here to know about me!</a>
+
 </html>
